@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Door Control";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4>Door Control Panel</h4>
+            </div>
+            <div class="card-body text-center">
+                @if (TempData["Message"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["Message"]
+                    </div>
+                }
+
+                <p>Control the smart door remotely</p>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <form asp-action="OpenDoor" method="post" class="me-2">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            🔓 Open Door
+                        </button>
+                    </form>
+
+                    <form asp-action="CloseDoor" method="post">
+                        <button type="submit" class="btn btn-danger btn-lg">
+                            🔒 Close Door
+                        </button>
+                    </form>
+                </div>
+
+                <div class="mt-4">
+                    <small class="text-muted">
+                        Commands are sent via MQTT to your ESP32 device
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

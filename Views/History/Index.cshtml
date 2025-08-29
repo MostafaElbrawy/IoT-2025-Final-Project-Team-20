@@ -1,0 +1,41 @@
+﻿@model List<IOT_project.HistoryViewModel>
+
+<h2 class="mb-3">Login Attempts History</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Attempted At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Email</td>
+                    <td>
+                        @if (item.Success)
+                        {
+                            <span class="badge bg-success">Success</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Failure</span>
+                        }
+                    </td>
+                    <td>@item.AttemptedAt.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3" class="text-center text-muted">No login attempts recorded.</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,34 @@
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\appsettings.Development.json
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\appsettings.json
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\IOT project.staticwebassets.runtime.json
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\IOT project.staticwebassets.endpoints.json
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\IOT project.exe
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\IOT project.deps.json
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\IOT project.runtimeconfig.json
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\IOT project.dll
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\IOT project.pdb
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.GeneratedMSBuildEditorConfig.editorconfig
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.AssemblyInfoInputs.cache
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.AssemblyInfo.cs
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.csproj.CoreCompileInputs.cache
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.MvcApplicationPartsAssemblyInfo.cache
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.RazorAssemblyInfo.cache
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.RazorAssemblyInfo.cs
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\scopedcss\bundle\IOT project.styles.css
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\staticwebassets.build.json
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\staticwebassets.development.json
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.dll
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\refint\IOT project.dll
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.pdb
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.genruntimeconfig.cache
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\ref\IOT project.dll
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT project.csproj.AssemblyReference.cache
+D:\Docs\Projects\C# Projects\IOT project\bin\Debug\net8.0\MQTTnet.dll
+D:\Docs\Projects\C# Projects\IOT project\obj\Debug\net8.0\IOT proj.E1363371.Up2Date

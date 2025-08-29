@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "KgPXDeJza3I=",
+  "success": true,
+  "projectFilePath": "D:\\Docs\\Projects\\C# Projects\\IOT project\\IOT project.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\mqttnet\\5.0.1.1416\\mqttnet.5.0.1.1416.nupkg.sha512"
+  ],
+  "logs": []
+}

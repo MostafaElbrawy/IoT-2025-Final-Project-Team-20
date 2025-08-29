@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Environmental Monitoring System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">IoT Smart System</div>
+            <ul class="nav-links">
+                <!-- Navigation will be updated by JavaScript based on login status -->
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="text-center mt-2">
+            <h1>Smart Environmental Monitoring & Access System</h1>
+            <p>Real-time monitoring and secure access control using IoT technology</p>
+
+            <div class="grid mt-2">
+
+                <div class="card">
+                    <h3>🔐 Smart Access Control</h3>
+                    <p>AI-powered facial recognition system for secure door access control.</p>
+                </div>
+
+                <div class="card">
+                    <h3>👁️ Computer Vision</h3>
+                    <p>Advanced facial recognition technology to identify authorized personnel and track access history.</p>
+                </div>
+
+                <div class="card">
+                    <h3>⚠️ Alert System</h3>
+                    <p>Get instant notifications for unauthorized access attempts.</p>
+                </div>
+            </div>
+
+            <!-- Dynamic button based on login status -->
+            <div class="mt-2" id="action-buttons">
+                <!-- Buttons will be updated by JavaScript -->
+            </div>
+        </div>
+
+        
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Update action buttons based on login status
+        function updateActionButtons() {
+            const actionButtons = document.getElementById('action-buttons');
+
+            if (currentUser) {
+                // User is logged in - show dashboard button
+                actionButtons.innerHTML = `
+                    <a href="/Home/Dashboard" class="btn btn-large btn-success">View Dashboard</a>
+                    <p style="margin-top: 1rem;">Welcome back, ${currentUser}!</p>
+                `;
+            } else {
+                // User is not logged in - show login button
+                actionButtons.innerHTML = `
+                    <a href="/Account/Login" class="btn btn-large">Access Dashboard</a>
+                `;
+            }
+        }
+
+        // Initialize page
+            document.addEventListener('DOMContentLoaded', function() {
+            // Restore currentUser from localStorage
+            if (!currentUser) {
+                currentUser = localStorage.getItem('currentUser');
+            }
+
+            // Check session validity
+            checkSessionValidity();
+
+            // Update action buttons
+            updateActionButtons();
+
+            // Update navigation
+            updateNavigation();
+        });
+    </script>
+</body>
+</html>

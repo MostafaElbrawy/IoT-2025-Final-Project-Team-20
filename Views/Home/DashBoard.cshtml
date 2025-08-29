@@ -1,0 +1,150 @@
+﻿@model DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Alerts</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.RecentAlerts.Any())
+                {
+                    @foreach (var alert in Model.RecentAlerts.Take(3))
+                    {
+                        <div class="alert alert-warning alert-sm">
+                            @alert.Message
+                            <small class="d-block">@alert.Timestamp.ToString("yyyy-MM-dd HH:mm")</small>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-success">No active alerts.</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Logins</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.RecentLoginsAttempts != null && Model.RecentLoginsAttempts.Any())
+                {
+                    @foreach (var login in Model.RecentLoginsAttempts.Take(3))
+                    {
+                        <div class="alert @(login.Success ? "alert-success" : "alert-danger") alert-sm d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>@login.Email</strong><br />
+                                <span class="badge @(login.Success ? "bg-success" : "bg-danger")">
+                                    @(login.Success ? "Success" : "Failed")
+                                </span>
+                            </div>
+                            <small class="text-muted">@login.AttemptedAt.ToString("yyyy-MM-dd HH:mm")</small>
+                        </div>
+
+                    }
+                }
+                else
+                {
+                    <p class="text-success">No login attempts.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between">
+        <h5>Recent People Detections</h5>
+       
+    </div>
+    <div class="card-body">
+        @if (Model.RecentDetections.Any())
+        {
+            <div class="mb-3">
+                <label for="statusFilter" class="form-label">Filter by Status:</label>
+                <select id="statusFilter" class="form-select" style="width: 200px; display: inline-block;" onchange="filterDetections()">
+                    <option value="all">All Detections</option>
+                    <option value="authorized">Authorized Only</option>
+                    <option value="unauthorized">Unauthorized Only</option>
+                    <option value="unknown">Unknown Only</option>
+                </select>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table" id="detectionsTable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Person</th>
+                            <th>Confidence</th>
+                            <th>Status</th>
+                            <th>Action Taken</th>
+                            <th>Camera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var detection in Model.RecentDetections)
+                        {
+                            <tr class="detection-row" data-status="@detection.DetectionStatus.ToLower()">
+                                <td>@detection.Timestamp.ToString("MMM dd, HH:mm")</td>
+                                <td>
+                                    <strong>@detection.PersonName</strong>
+                                    @if (detection.AuthorizedPerson != null)
+                                    {
+                                        <br>
+
+                                        <small class="text-muted">@detection.AuthorizedPerson.Role</small>
+                                    }
+                                </td>
+                                <td>
+                                    <span class="@(detection.ConfidenceScore >= 90 ? "text-success" : detection.ConfidenceScore >= 70 ? "text-warning" : "text-danger")">
+                                        @detection.ConfidenceScore.ToString("F1")%
+                                    </span>
+                                </td>
+                                <td>
+                                    @switch (detection.DetectionStatus.ToLower())
+                                    {
+                                        case "authorized":
+                                            <span class="badge bg-success">Authorized</span>
+                                            break;
+                                        case "unauthorized":
+                                            <span class="badge bg-danger">Unauthorized</span>
+                                            break;
+                                        case "unknown":
+                                            <span class="badge bg-warning">Unknown</span>
+                                            break;
+                                        default:
+                                            <span class="badge bg-secondary">@detection.DetectionStatus</span>
+                                            break;
+                                    }
+                                </td>
+                                <td>@detection.ActionTaken</td>
+                                <td>@detection.CameraId</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-4">
+                <p class="text-muted">No detection data available yet.</p>
+                <p><small>Detection logs will appear here once the system starts detecting people.</small></p>
+            </div>
+        }
+    </div>
+</div>
+

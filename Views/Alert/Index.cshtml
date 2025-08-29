@@ -1,0 +1,42 @@
+﻿@model IOT_project.AlertsModelView
+@{
+    ViewData["Title"] = "Alerts";
+}
+
+<div class="container py-4">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+        <h1 class="h3 m-0">Alerts</h1>
+        <span class="badge bg-primary fs-6">Total: @Model?.Count</span>
+    </div>
+
+    @if (Model == null || !Model.Alerts.Any())
+    {
+        <div class="alert alert-secondary" role="alert">
+            No alerts to show right now.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive shadow-sm rounded">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 80px;">ID</th>
+                        <th>Message</th>
+                        <th style="width: 220px;">Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var a in Model.Alerts)
+                    {
+                        <tr>
+                            <td>@a.Id</td>
+                            <td class="text-break">@a.Message</td>
+                            <td>@a.Timestamp.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
